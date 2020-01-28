@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+	
+	<div class="col">
+		<p>Add a new topic</p>
+		<form action="{% url 'learning_logs:new_topic' %}" method="post">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<button type="submit" class="btn btn-primary">Add topic</button>
+		</form>
+	</div>
+{% endblock content %}
